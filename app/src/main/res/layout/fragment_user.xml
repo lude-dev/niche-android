@@ -15,11 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:src="@drawable/ic_launcher_background"
             android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:contentDescription="@string/profile_pic" />
+            android:layout_height="60dp"/>
 
     </LinearLayout>
 
