@@ -8,7 +8,20 @@
     android:paddingStart="24dp"
     android:paddingEnd="24dp">
 
+    <LinearLayout
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/profile_pic" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
