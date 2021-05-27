@@ -4,38 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.implude.niche.R
 import com.implude.niche.databinding.FragmentUserBinding
+import com.implude.niche.presentation.base.BaseFragment
 
-class UserFragment : Fragment() {
+class UserFragment : BaseFragment<FragmentUserBinding>(R.layout.fragment_user) {
 
     private lateinit var userViewModel: UserViewModel
-    private var _binding: FragmentUserBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+
         userViewModel =
             ViewModelProvider(this).get(UserViewModel::class.java)
 
-        _binding = FragmentUserBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return binding.root
     }
 }
