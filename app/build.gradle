@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.apollographql.apollo'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -8,6 +9,9 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdk 30
     buildToolsVersion "30.0.3"
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
     defaultConfig {
         applicationId "com.implude.niche"
@@ -17,6 +21,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resValue "string", "tmap_api_key", properties.getProperty("api.key")
     }
 
     buildTypes {
@@ -38,6 +43,10 @@ android {
     }
 }
 
+apollo {
+    generateKotlinModels.set(true)
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.5.0'
@@ -48,14 +57,35 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    //circle image view
+    // Circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    //sliding up pannel
+    // Sliding up pannel
     implementation 'com.sothree.slidinguppanel:library:3.4.0'
+
+    // Tmap
+    implementation files('libs/com.skt.Tmap_1.67.jar')
+
+    // ReactiveX
+    implementation "io.reactivex.rxjava3:rxjava:3.0.12"
+
+    // Apollo client
+    implementation "com.apollographql.apollo:apollo-runtime:$apollo_version"
+    implementation "com.apollographql.apollo:apollo-api:$apollo_version"
+    implementation "com.apollographql.apollo:apollo-rx3-support:$apollo_version"
+
+    // Koin
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
 }
