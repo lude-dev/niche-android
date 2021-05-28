@@ -48,8 +48,21 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // ReactiveX
+    implementation "io.reactivex.rxjava3:rxjava:3.0.12"
+
+    // Apollo client
+    implementation "com.apollographql.apollo:apollo-runtime:$apollo_version"
+    implementation "com.apollographql.apollo:apollo-api:$apollo_version"
+    implementation "com.apollographql.apollo:apollo-rx3-support:$apollo_version"
+
+    // Koin
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
