@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.apollographql.apollo'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -40,6 +41,10 @@ android {
         dataBinding true
         viewBinding true
     }
+}
+
+apollo {
+    generateKotlinModels.set(true)
 }
 
 dependencies {
