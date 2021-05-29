@@ -11,16 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00FFFFFF"
-        app:umanoFadeColor="#00000000"
-        app:umanoDragView="@id/slide_layout"
-        app:umanoOverlay="false"
         android:gravity="bottom"
+        app:umanoDragView="@id/slide_layout"
+        app:umanoFadeColor="#00000000"
+        app:umanoOverlay="false"
         app:umanoPanelHeight="125dp"
         app:umanoShadowHeight="0dp"
         tools:context=".presentation.home.HomeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/back_layout"
+            android:id="@+id/background_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#42A5F5">
@@ -44,8 +44,6 @@
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:background="@drawable/background_slidepannel_round" />
-
-
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 </layout>
