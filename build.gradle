@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        apollo_version = "2.5.7"
+        apollo_version = "2.4.7"
         koin_version = "3.0.2"
     }
     repositories {
