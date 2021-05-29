@@ -58,9 +58,19 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
-    implementation files('libs/com.skt.Tmap_1.67.jar')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Sliding up pannel
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+
+    // Tmap
+    implementation files('libs/com.skt.Tmap_1.67.jar')
 
     // ReactiveX
     implementation "io.reactivex.rxjava3:rxjava:3.0.12"
@@ -77,4 +87,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
 }
