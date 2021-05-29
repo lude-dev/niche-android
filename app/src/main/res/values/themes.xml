@@ -11,7 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- non include font padding -->
+        <!-- Include font padding to false -->
         <item name="android:includeFontPadding">false</item>
     </style>
 </resources>
