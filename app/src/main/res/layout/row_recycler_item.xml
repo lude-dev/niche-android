@@ -100,7 +100,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_comment_icon" />
+                        android:src="@drawable/ic_comment" />
 
                     <TextView
                         android:id="@+id/store_comments"
