@@ -1,6 +1,7 @@
 package com.implude.niche.presentation.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
 import com.implude.niche.presentation.base.BaseFragment
+import com.skt.Tmap.TMapView
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
@@ -23,6 +25,27 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
+        val tMapView = initializeTMapView()
+        binding.mapContainer.addView(tMapView)
+
         return binding.root
+    }
+
+    private fun initializeTMapView() =
+        TMapView(requireContext()).apply {
+            setOnApiKeyListener(object : TMapView.OnApiKeyListenerCallback {
+                override fun SKTMapApikeySucceed() {
+                    Log.d(TAG, "tmap auth succeed")
+                }
+
+                override fun SKTMapApikeyFailed(p0: String?) {
+                    Log.w(TAG, "tmap auth failed: $p0")
+                }
+            })
+            setSKTMapApiKey(getString(R.string.tmap_api_key))
+        }
+
+    companion object {
+        const val TAG = "HomeFragment"
     }
 }

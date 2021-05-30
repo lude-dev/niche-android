@@ -19,24 +19,12 @@
         app:umanoShadowHeight="0dp"
         tools:context=".presentation.home.HomeFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/background_layout"
+        <LinearLayout
+            android:id="@+id/map_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#42A5F5">
-
-            <TextView
-                android:id="@+id/tv_text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Background Layout"
-                android:textColor="?android:attr/textColorPrimaryInverse"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" />
 
         <include
             layout="@layout/fragment_home_slide"
