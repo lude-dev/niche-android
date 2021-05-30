@@ -61,7 +61,7 @@
                         android:layout_marginStart="3dp"
                         android:fontFamily="@font/noto_sans_kr_medium"
                         android:text="270m"
-                        android:textColor="@color/color_distance"
+                        android:textColor="@color/color_turquoise"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -85,7 +85,7 @@
                         android:layout_marginStart="3dp"
                         android:fontFamily="@font/noto_sans_kr_medium"
                         android:text="370"
-                        android:textColor="@color/color_heart"
+                        android:textColor="@color/color_pink"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -109,7 +109,7 @@
                         android:layout_marginStart="3dp"
                         android:fontFamily="@font/noto_sans_kr_medium"
                         android:text="300"
-                        android:textColor="@color/color_comment"
+                        android:textColor="@color/color_gray"
                         android:textSize="14sp" />
 
                 </LinearLayout>

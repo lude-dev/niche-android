@@ -9,8 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_hint">#7B7B7B</color>
     <color name="box_gray">#F5F5F5</color>
-    <color name="ad_contents">#626262</color>
-    <color name="color_distance">#297D89</color>
-    <color name="color_comment">#626262</color>
-    <color name="color_heart">#FF6060</color>
+    <color name="color_turquoise">#297D89</color>
+    <color name="color_gray">#626262</color>
+    <color name="color_pink">#FF6060</color>
 </resources>
