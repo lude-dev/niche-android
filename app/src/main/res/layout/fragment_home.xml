@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="fragment"
             type="com.implude.niche.databinding.FragmentHomeBindingImpl" />
@@ -115,13 +116,13 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:scrollbars="none"
-                        android:overScrollMode="never"
-                        android:layout_marginTop="16dp"
                         android:id="@+id/recommend_store_recyclerview"
-                        app:layout_constraintTop_toBottomOf="@id/recommend_store_textview"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        app:layout_constraintTop_toBottomOf="@id/recommend_store_textview" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -142,9 +143,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <!--        TODO: Recycler View about popular tags-->
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -156,23 +154,23 @@
 
                     <ImageView
                         android:id="@+id/ad_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/ic_advertisement"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginEnd="50dp"
-                        app:layout_constraintStart_toEndOf="@+id/ad_icon"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/ad_arrow_button"
                         android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ad_arrow_button"
+                        app:layout_constraintStart_toEndOf="@+id/ad_icon"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:id="@+id/ad_title_textview"
@@ -186,13 +184,13 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:textColor="@color/ad_contents"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/noto_sans_kr_medium"
                             android:id="@+id/ad_content_textview"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_kr_medium"
                             android:text="알고있는 정보를 공유하고 코인을 받을 수 있어요."
+                            android:textColor="@color/ad_contents"
+                            android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/ad_title_textview" />
 
@@ -213,7 +211,7 @@
 
         </ScrollView>
 
-<!--        <Layout></Layout>-->
+        <!--        <Layout></Layout>-->
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 </layout>
