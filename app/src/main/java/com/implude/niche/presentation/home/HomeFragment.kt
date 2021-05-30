@@ -24,21 +24,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onCreateView(inflater, container, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val baseAdapter = PlaceAdapter(this.requireContext())
+        val placeAdapter = PlaceAdapter(this.requireContext())
 
         val layoutManager = LinearLayoutManager(this.requireContext())
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.recommendStoreRecyclerview.layoutManager = layoutManager
 
-        binding.recommendStoreRecyclerview.adapter = baseAdapter
+        binding.recommendStoreRecyclerview.adapter = placeAdapter
 
-        baseAdapter.data = listOf(
+        placeAdapter.data = listOf(
             Place("", "", "asdf", "", 0, 0, ""),
             Place("", "", "asdf", "", 0, 0, ""),
             Place("", "", "asdf", "", 0, 0, "")
         )
 
-        baseAdapter.notifyDataSetChanged()
+        placeAdapter.notifyDataSetChanged()
 
 
 
