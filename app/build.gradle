@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.apollographql.apollo'
+    id 'com.apollographql.apollo' version "$apollo_version"
 }
 
 apply plugin: 'kotlin-kapt'
@@ -45,6 +45,7 @@ android {
 
 apollo {
     generateKotlinModels.set(true)
+    graphqlSourceDirectorySet.exclude("**/schema.json.graphql")
 }
 
 dependencies {
