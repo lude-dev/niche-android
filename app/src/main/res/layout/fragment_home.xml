@@ -156,7 +156,7 @@
 
                     <ImageView
                         android:id="@+id/ad_icon"
-                        android:src="@drawable/ic_ad_icon"
+                        android:src="@drawable/ic_advertisement"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
