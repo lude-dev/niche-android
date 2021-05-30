@@ -8,25 +8,25 @@ import com.implude.niche.databinding.RowRecyclerItemBinding
 import com.implude.niche.domain.model.Place
 
 class PlaceAdapter(private val context: Context) :
-    RecyclerView.Adapter<PlaceAdapter.BaseViewHolder>() {
+    RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
     var data = listOf<Place>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RowRecyclerItemBinding.inflate(
             LayoutInflater.from(context), parent, false
         )
 
-        return BaseViewHolder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(data[position])
     }
 
     override fun getItemCount(): Int = data.size
 
-    class BaseViewHolder(val item: RowRecyclerItemBinding) : RecyclerView.ViewHolder(item.root) {
+    class ViewHolder(val item: RowRecyclerItemBinding) : RecyclerView.ViewHolder(item.root) {
         fun onBind(data: Place) {
             item.place = data
         }
