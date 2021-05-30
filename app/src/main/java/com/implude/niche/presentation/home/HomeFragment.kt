@@ -28,9 +28,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         val layoutManager = LinearLayoutManager(this.requireContext())
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        binding.recommendStoreRecyclerview.layoutManager = layoutManager
+        binding.fragmentHomeSlide.recommendStoreRecyclerview.layoutManager = layoutManager
 
-        binding.recommendStoreRecyclerview.adapter = placeAdapter
+        binding.fragmentHomeSlide.recommendStoreRecyclerview.adapter = placeAdapter
 
         placeAdapter.data = listOf(
             Place("", "", "asdf", "", 0, 0, ""),
