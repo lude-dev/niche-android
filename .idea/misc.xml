@@ -6,6 +6,14 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.3902564102564103" />
         <entry key="app/src/main/res/drawable/background_search.xml" value="0.3912820512820513" />
         <entry key="app/src/main/res/drawable/background_slidepannel_round.xml" value="0.3912820512820513" />
+        <entry key="app/src/main/res/drawable/gray_box.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_ad_icon.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_arrow_button.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_comment_icon.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_distance_icon.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_gray_box.xml" value="0.3391111111111111" />
+        <entry key="app/src/main/res/drawable/ic_heart_icon.xml" value="0.3391111111111111" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/drawable/ic_menu_main.xml" value="0.2953703703703704" />
         <entry key="app/src/main/res/drawable/ic_search_icon.xml" value="0.3912820512820513" />
@@ -16,6 +24,7 @@
         <entry key="app/src/main/res/layout/fragment_home_slide.xml" value="0.3253333333333333" />
         <entry key="app/src/main/res/layout/fragment_participation.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.26481481481481484" />
+        <entry key="app/src/main/res/layout/store_recycler_item.xml" value="0.18693693693693694" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3229166666666667" />
       </map>
     </option>
