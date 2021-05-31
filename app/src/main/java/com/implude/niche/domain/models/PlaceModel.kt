@@ -6,8 +6,8 @@ data class PlaceModel(
     val location: LocationModel,
     val category: CategoryModel,
     val tags: List<TagModel>,
-    val owner: UserModel,
+    val owner: UserModel?,
     val verified: Boolean,
-    val comment: CommentModel,
+    val comments: List<CommentModel>,
     val hearted: Boolean,
 ) : DocumentModel
