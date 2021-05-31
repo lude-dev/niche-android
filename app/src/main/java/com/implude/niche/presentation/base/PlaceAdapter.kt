@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.implude.niche.databinding.RowRecyclerItemBinding
-import com.implude.niche.domain.model.Place
+import com.implude.niche.domain.models.PlaceModel
 
 class PlaceAdapter(private val context: Context) :
     RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
-    var data = listOf<Place>()
+    var data = listOf<PlaceModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RowRecyclerItemBinding.inflate(
@@ -27,7 +27,7 @@ class PlaceAdapter(private val context: Context) :
     override fun getItemCount(): Int = data.size
 
     class ViewHolder(val item: RowRecyclerItemBinding) : RecyclerView.ViewHolder(item.root) {
-        fun onBind(data: Place) {
+        fun onBind(data: PlaceModel) {
             item.place = data
         }
     }
