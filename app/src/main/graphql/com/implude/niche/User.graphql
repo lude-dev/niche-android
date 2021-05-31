@@ -3,3 +3,10 @@ mutation Login($email: String!, $password: String!) {
         accessToken
     }
 }
+
+mutation RegisterUser($email: String!, $password: String!, $name: String!, $profileImage: String) {
+    registerUser(email: $email, password: $password, name: $name, profileImage: $profileImage) {
+        email
+        accessToken
+    }
+}
