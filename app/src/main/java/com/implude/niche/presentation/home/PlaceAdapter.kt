@@ -1,4 +1,4 @@
-package com.implude.niche.presentation.base
+package com.implude.niche.presentation.home
 
 import android.content.Context
 import android.view.LayoutInflater

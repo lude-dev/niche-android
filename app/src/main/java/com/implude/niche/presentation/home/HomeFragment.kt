@@ -8,8 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
-import com.implude.niche.domain.model.Place
-import com.implude.niche.presentation.base.PlaceAdapter
 import com.implude.niche.presentation.base.BaseFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
