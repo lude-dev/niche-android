@@ -32,12 +32,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         binding.fragmentHomeSlide.recommendStoreRecyclerview.adapter = placeAdapter
 
-        placeAdapter.data = listOf(
-            Place("", "", "asdf", "", 0, 0, ""),
-            Place("", "", "asdf", "", 0, 0, ""),
-            Place("", "", "asdf", "", 0, 0, "")
-        )
-
         placeAdapter.notifyDataSetChanged()
 
 
