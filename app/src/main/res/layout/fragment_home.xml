@@ -14,7 +14,7 @@
         android:gravity="bottom"
         app:umanoDragView="@id/slide_layout"
         app:umanoFadeColor="#00000000"
-        app:umanoOverlay="false"
+        app:umanoOverlay="true"
         app:umanoPanelHeight="125dp"
         app:umanoShadowHeight="0dp"
         tools:context=".presentation.home.HomeFragment">
@@ -27,11 +27,10 @@
             tools:ignore="UselessLeaf" />
 
         <include
+            android:id="@+id/fragment_home_slide"
             layout="@layout/fragment_home_slide"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/background_slidepannel_round" />
+            android:layout_height="match_parent"/>
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 </layout>
