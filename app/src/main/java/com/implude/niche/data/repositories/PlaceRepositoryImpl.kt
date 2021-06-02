@@ -46,5 +46,4 @@ class PlaceRepositoryImpl(
             ?.let(nearPlacesMapper::map)
             ?: throw operationFailedException
     }
-
 }
