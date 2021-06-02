@@ -1,0 +1,42 @@
+mutation CreatePlace($location: LocationInput!, $name: String!, $category: String, $tags: [String]) {
+    createPlace(location: $location, name: $name, category: $category, tags: $tags) {
+        _id
+        category {
+            _id
+            label
+        }
+        location {
+            lat
+            lon
+        }
+        name
+        owner {
+            _id
+            name
+            profileImage
+        }
+        tags {
+            _id
+            label
+        }
+    }
+}
+
+query NearPlaces($lat: Float!, $lon: Float!) {
+    nearPlaces(lat: $lat, lon: $lon) {
+        _id
+        comment {
+            content
+        }
+        hearted
+        location {
+            lat
+            lon
+        }
+        tags {
+            _id
+            label
+        }
+        verified
+    }
+}
