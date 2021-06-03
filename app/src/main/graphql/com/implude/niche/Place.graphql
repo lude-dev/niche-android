@@ -25,6 +25,10 @@ mutation CreatePlace($location: LocationInput!, $name: String!, $category: Strin
 query NearPlaces($lat: Float!, $lon: Float!) {
     nearPlaces(lat: $lat, lon: $lon) {
         _id
+        category {
+            _id
+            label
+        }
         comment {
             content
         }
@@ -33,6 +37,7 @@ query NearPlaces($lat: Float!, $lon: Float!) {
             lat
             lon
         }
+        name
         tags {
             _id
             label
