@@ -1,4 +1,4 @@
 /build
-.idea/
+.idea/**
 .idea
 **/schema.sdl
