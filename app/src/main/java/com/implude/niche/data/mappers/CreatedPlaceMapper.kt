@@ -19,6 +19,7 @@ class CreatedPlaceMapper : Mapper<CreatePlaceMutation.Data, PlaceModel> {
             verified = false,
             comments = listOf(),
             hearted = false,
+            heartQuantity = 0,
         )
     } ?: throw mappingFailedException
 }

@@ -30,7 +30,7 @@ class UserRepositoryImpl(
         email: String,
         password: String,
         name: String,
-        profileImage: String
+        profileImage: String?
     ): Single<RegisteredInfoModel> = safeSingleCall {
         apolloClient.rxMutate(RegisterUserMutation(email, password, name, Input.optional(profileImage)))
             .blockingGet()
