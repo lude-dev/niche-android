@@ -11,6 +11,6 @@ interface UserRepository {
         email: String,
         password: String,
         name: String,
-        profileImage: String
+        profileImage: String?
     ): Single<RegisteredInfoModel>
 }
