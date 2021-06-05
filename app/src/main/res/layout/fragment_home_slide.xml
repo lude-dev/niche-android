@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:src="@drawable/ic_sliding_panel_handle" />
+            android:src="@drawable/ic_slide_panel_handle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
