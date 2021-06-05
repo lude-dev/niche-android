@@ -10,6 +10,7 @@ import com.implude.niche.data.mappers.Mapper
 import com.implude.niche.data.operationFailedException
 import com.implude.niche.data.safeSingleCall
 import com.implude.niche.domain.models.PlaceModel
+import com.implude.niche.domain.models.ReducedPlaceModel
 import com.implude.niche.domain.repositories.PlaceRepository
 import com.implude.niche.type.LocationInput
 import io.reactivex.rxjava3.core.Single
@@ -17,7 +18,7 @@ import io.reactivex.rxjava3.core.Single
 class PlaceRepositoryImpl(
     private val apolloClient: ApolloClient,
     private val createdPlaceMapper: Mapper<CreatePlaceMutation.Data, PlaceModel>,
-    private val nearPlacesMapper: Mapper<NearPlacesQuery.Data, List<PlaceModel>>,
+    private val nearPlacesMapper: Mapper<NearPlacesQuery.Data, List<ReducedPlaceModel>>,
 ) : PlaceRepository {
     override fun createPlace(
         name: String,
@@ -39,7 +40,7 @@ class PlaceRepositoryImpl(
             ?: throw operationFailedException
     }
 
-    override fun nearPlace(latitude: Double, longitude: Double): Single<List<PlaceModel>> = safeSingleCall {
+    override fun nearPlace(latitude: Double, longitude: Double): Single<List<ReducedPlaceModel>> = safeSingleCall {
         apolloClient.rxQuery(NearPlacesQuery(latitude, longitude))
             .blockingFirst()
             .data
