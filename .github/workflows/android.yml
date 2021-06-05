@@ -18,6 +18,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+        
+    - name: Access TMAP_API_APP_KEY
+      env:
+        TMAP_API_APP_KEY: ${{ secrets.TMAP_API_APP_KEY }}
+      run: echo api.key=\"$TMAP_API_APP_KEY\" > ./local.properties
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
