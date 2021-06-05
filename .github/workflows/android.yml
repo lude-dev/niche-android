@@ -18,6 +18,14 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    
+    - name: Install apollo
+      run: npm install -g apollo
+    - name: Download schema
+      run: apollo client:download-schema --endpoint="https://niche-backend-ssrfsfwh3a-uc.a.run.app/" ./app/src/main/graphql/com/implude/niche/schema.sdl
         
     - name: Access TMAP_API_APP_KEY
       env:
