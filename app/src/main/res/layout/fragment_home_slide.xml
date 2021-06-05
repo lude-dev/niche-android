@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         app:layout_constraintTop_toTopOf="parent"
         android:paddingBottom="16dp"
-        android:id="@+id/sliding_panel_handle"
+        android:id="@+id/slide_panel_handle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -29,7 +29,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search_layout"
-        app:layout_constraintTop_toBottomOf="@+id/sliding_panel_handle"
+        app:layout_constraintTop_toBottomOf="@+id/slide_panel_handle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_search"

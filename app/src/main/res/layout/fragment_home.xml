@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="#00FFFFFF"
         android:gravity="bottom"
-        app:umanoDragView="@id/sliding_panel_handle"
+        app:umanoDragView="@id/slide_panel_handle"
         app:umanoFadeColor="#00000000"
         app:umanoOverlay="true"
         app:umanoPanelHeight="125dp"
