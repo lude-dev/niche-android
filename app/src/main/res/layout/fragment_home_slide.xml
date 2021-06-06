@@ -4,26 +4,34 @@
     android:id="@+id/slide_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/background_slidepannel_round"
+    android:background="@drawable/background_slide_panel_round"
     android:paddingStart="24dp"
     android:paddingEnd="24dp">
 
-    <ImageView
-        android:id="@+id/sliding_pannel_handle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_sliding_pannel_handle" />
+        android:paddingBottom="16dp"
+        android:id="@+id/slide_panel_handle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_slide_panel_handle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search_layout"
-        app:layout_constraintTop_toBottomOf="@+id/sliding_pannel_handle"
+        app:layout_constraintTop_toBottomOf="@+id/slide_panel_handle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:background="@drawable/background_search"
         android:paddingStart="18dp"
         android:paddingTop="12dp"
