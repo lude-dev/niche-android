@@ -28,14 +28,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onCreateView(inflater, container, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val placeAdapter = RecommendPlaceAdapter(this.requireContext())
+        val recommendPlaceAdapter = RecommendPlaceAdapter(this.requireContext())
 
         val layoutManager = LinearLayoutManager(this.requireContext())
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
             this.layoutManager = layoutManager
-            this.adapter = placeAdapter
-            placeAdapter.items = listOf(
+            this.adapter = recommendPlaceAdapter
+            recommendPlaceAdapter.items = listOf(
                 PlaceModel(
                     name = "달달 무슨달",
                     id = "id",
@@ -75,7 +75,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             )
         }
 
-        placeAdapter.notifyDataSetChanged()
+        recommendPlaceAdapter.notifyDataSetChanged()
 
 
 
