@@ -6,7 +6,7 @@ import com.implude.niche.databinding.RowRecyclerItemBinding
 import com.implude.niche.domain.models.PlaceModel
 import com.implude.niche.presentation.base.BaseRecyclerViewAdapter
 
-class PlaceAdapter(context: Context) : BaseRecyclerViewAdapter<PlaceModel, RowRecyclerItemBinding>(
+class NearPopularPlaceAdapter(context: Context) : BaseRecyclerViewAdapter<PlaceModel, RowRecyclerItemBinding>(
     context,
     R.layout.row_recycler_item,
     { binding, item ->
