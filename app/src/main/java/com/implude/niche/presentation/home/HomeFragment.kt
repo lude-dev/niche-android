@@ -36,6 +36,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         val nearPopularPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         nearPopularPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
+        val nearPopularTopicPlaceAdapter = NearPopularTopicPlaceAdapter(this.requireContext())
+        val nearPopularTopicPlaceLayoutManager = LinearLayoutManager(this.requireContext())
+        nearPopularTopicPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
             this.layoutManager = recommendPlaceLayoutManager
             this.adapter = recommendPlaceAdapter
@@ -45,6 +49,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.fragmentHomeSlide.nearPopularStoreRecyclerview.apply {
             this.layoutManager = nearPopularPlaceLayoutManager
             this.adapter = nearPopularPlaceAdapter
+
+        }
+
+        binding.fragmentHomeSlide.nearPopularTopicRecyclerview.apply {
+            this.layoutManager = nearPopularTopicPlaceLayoutManager
+            this.adapter = nearPopularTopicPlaceAdapter
 
         }
 
