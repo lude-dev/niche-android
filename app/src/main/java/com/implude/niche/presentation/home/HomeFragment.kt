@@ -39,87 +39,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
             this.layoutManager = recommendPlaceLayoutManager
             this.adapter = recommendPlaceAdapter
-            recommendPlaceAdapter.items = listOf(
-                PlaceModel(
-                    name = "달달 무슨달",
-                    id = "id",
-                    heartQuantity = 25,
-                    hearted = true,
-                    verified = true,
-                    owner = UserModel("id","name",null),
-                    category = CategoryModel("id","label"),
-                    location = LocationModel(1.1, 1.1),
-                    comments = null,
-                    tags = null
-                ),
-                PlaceModel(
-                    name = "달달 무슨달",
-                    id = "id",
-                    heartQuantity = 25,
-                    hearted = true,
-                    verified = true,
-                    owner = UserModel("id","name",null),
-                    category = CategoryModel("id","label"),
-                    location = LocationModel(1.1, 1.1),
-                    comments = null,
-                    tags = null
-                ),
-                PlaceModel(
-                    name = "달달 무슨달",
-                    id = "id",
-                    heartQuantity = 25,
-                    hearted = true,
-                    verified = true,
-                    owner = UserModel("id","name",null),
-                    category = CategoryModel("id","label"),
-                    location = LocationModel(1.1, 1.1),
-                    comments = null,
-                    tags = null
-                )
-            )
+
         }
 
         binding.fragmentHomeSlide.nearPopularStoreRecyclerview.apply {
             this.layoutManager = nearPopularPlaceLayoutManager
             this.adapter = nearPopularPlaceAdapter
-            nearPopularPlaceAdapter.items = listOf(
-                PlaceModel(
-                    name = "달달",
-                    id = "id",
-                    heartQuantity = 25,
-                    hearted = true,
-                    verified = true,
-                    owner = UserModel("id","name",null),
-                    category = CategoryModel("id","label"),
-                    location = LocationModel(1.1, 1.1),
-                    comments = null,
-                    tags = null
-                ),
-                PlaceModel(
-                    name = "달달",
-                    id = "id",
-                    heartQuantity = 25,
-                    hearted = true,
-                    verified = true,
-                    owner = UserModel("id","name",null),
-                    category = CategoryModel("id","label"),
-                    location = LocationModel(1.1, 1.1),
-                    comments = null,
-                    tags = null
-                ),
-                PlaceModel(
-                    name = "달달",
-                    id = "id",
-                    heartQuantity = 25,
-                    hearted = true,
-                    verified = true,
-                    owner = UserModel("id","name",null),
-                    category = CategoryModel("id","label"),
-                    location = LocationModel(1.1, 1.1),
-                    comments = null,
-                    tags = null
-                )
-            )
+
         }
 
         recommendPlaceAdapter.notifyDataSetChanged()
