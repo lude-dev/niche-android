@@ -30,10 +30,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         val recommendPlaceAdapter = RecommendPlaceAdapter(this.requireContext())
 
-        val layoutManager = LinearLayoutManager(this.requireContext())
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        val recommendPlaceLayoutManager = LinearLayoutManager(this.requireContext())
+        recommendPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
-            this.layoutManager = layoutManager
+            this.layoutManager = recommendPlaceLayoutManager
             this.adapter = recommendPlaceAdapter
             recommendPlaceAdapter.items = listOf(
                 PlaceModel(
