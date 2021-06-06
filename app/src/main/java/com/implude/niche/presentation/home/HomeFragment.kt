@@ -9,6 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
+import com.implude.niche.domain.models.CategoryModel
+import com.implude.niche.domain.models.LocationModel
+import com.implude.niche.domain.models.PlaceModel
+import com.implude.niche.domain.models.UserModel
 import com.implude.niche.presentation.base.BaseFragment
 import com.skt.Tmap.TMapView
 
@@ -24,13 +28,51 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onCreateView(inflater, container, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val placeAdapter = PlaceAdapter(this.requireContext())
+        val placeAdapter = RecommendPlaceAdapter(this.requireContext())
 
         val layoutManager = LinearLayoutManager(this.requireContext())
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
             this.layoutManager = layoutManager
             this.adapter = placeAdapter
+            placeAdapter.items = listOf(
+                PlaceModel(
+                    name = "달달 무슨달",
+                    id = "id",
+                    heartQuantity = 25,
+                    hearted = true,
+                    verified = true,
+                    owner = UserModel("id","name",null),
+                    category = CategoryModel("id","label"),
+                    location = LocationModel(1.1, 1.1),
+                    comments = null,
+                    tags = null
+                ),
+                PlaceModel(
+                    name = "달달 무슨달",
+                    id = "id",
+                    heartQuantity = 25,
+                    hearted = true,
+                    verified = true,
+                    owner = UserModel("id","name",null),
+                    category = CategoryModel("id","label"),
+                    location = LocationModel(1.1, 1.1),
+                    comments = null,
+                    tags = null
+                ),
+                PlaceModel(
+                    name = "달달 무슨달",
+                    id = "id",
+                    heartQuantity = 25,
+                    hearted = true,
+                    verified = true,
+                    owner = UserModel("id","name",null),
+                    category = CategoryModel("id","label"),
+                    location = LocationModel(1.1, 1.1),
+                    comments = null,
+                    tags = null
+                )
+            )
         }
 
         placeAdapter.notifyDataSetChanged()
