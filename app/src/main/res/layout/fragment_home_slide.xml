@@ -110,40 +110,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/ad_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="근처 골목가게를 알려주세요!"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/ad_content_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/ad_arrow_button"
-            app:layout_constraintStart_toEndOf="@+id/ad_icon"
-            app:layout_constraintTop_toTopOf="parent">
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="알고있는 정보를 공유하고 코인을 받을 수 있어요."
+            android:textColor="@color/color_gray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ad_title_textview"
+            app:layout_constraintVertical_bias="0" />
 
-            <TextView
-                android:id="@+id/ad_title_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="근처 골목가게를 알려주세요!"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/ad_content_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/noto_sans_kr_medium"
-                android:text="알고있는 정보를 공유하고 코인을 받을 수 있어요."
-                android:textColor="@color/color_gray"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ad_title_textview" />
-
-        </LinearLayout>
 
         <ImageView
             android:id="@+id/ad_arrow_button"
