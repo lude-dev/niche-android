@@ -24,18 +24,35 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onCreateView(inflater, container, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val placeAdapter = PlaceAdapter(this.requireContext())
+        val recommendPlaceAdapter = PlaceAdapter(this.requireContext())
+        val recommendPlaceLayoutManager = LinearLayoutManager(this.requireContext())
+        recommendPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
-        val layoutManager = LinearLayoutManager(this.requireContext())
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        val nearPopularPlaceAdapter = PlaceAdapter(this.requireContext())
+        val nearPopularPlaceLayoutManager = LinearLayoutManager(this.requireContext())
+        nearPopularPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
+        val nearPopularTopicPlaceAdapter = PlaceAdapter(this.requireContext())
+        val nearPopularTopicPlaceLayoutManager = LinearLayoutManager(this.requireContext())
+        nearPopularTopicPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
-            this.layoutManager = layoutManager
-            this.adapter = placeAdapter
+            this.layoutManager = recommendPlaceLayoutManager
+            this.adapter = recommendPlaceAdapter
+
         }
 
-        placeAdapter.notifyDataSetChanged()
+        binding.fragmentHomeSlide.nearPopularStoreRecyclerview.apply {
+            this.layoutManager = nearPopularPlaceLayoutManager
+            this.adapter = nearPopularPlaceAdapter
 
+        }
 
+        binding.fragmentHomeSlide.nearPopularTopicRecyclerview.apply {
+            this.layoutManager = nearPopularTopicPlaceLayoutManager
+            this.adapter = nearPopularTopicPlaceAdapter
+
+        }
 
         val tMapView = initializeTMapView()
         binding.mapContainer.addView(tMapView)
