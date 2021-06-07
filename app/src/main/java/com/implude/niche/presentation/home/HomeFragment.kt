@@ -9,10 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
-import com.implude.niche.domain.models.CategoryModel
-import com.implude.niche.domain.models.LocationModel
-import com.implude.niche.domain.models.PlaceModel
-import com.implude.niche.domain.models.UserModel
 import com.implude.niche.presentation.base.BaseFragment
 import com.skt.Tmap.TMapView
 
@@ -28,15 +24,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onCreateView(inflater, container, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val recommendPlaceAdapter = RecommendPlaceAdapter(this.requireContext())
+        val recommendPlaceAdapter = PlaceAdapter(this.requireContext())
         val recommendPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         recommendPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
-        val nearPopularPlaceAdapter = NearPopularPlaceAdapter(this.requireContext())
+        val nearPopularPlaceAdapter = PlaceAdapter(this.requireContext())
         val nearPopularPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         nearPopularPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
-        val nearPopularTopicPlaceAdapter = NearPopularTopicPlaceAdapter(this.requireContext())
+        val nearPopularTopicPlaceAdapter = PlaceAdapter(this.requireContext())
         val nearPopularTopicPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         nearPopularTopicPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
