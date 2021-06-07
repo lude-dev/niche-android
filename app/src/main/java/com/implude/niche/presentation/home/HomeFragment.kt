@@ -54,10 +54,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         }
 
-        recommendPlaceAdapter.notifyDataSetChanged()
-
-
-
         val tMapView = initializeTMapView()
         binding.mapContainer.addView(tMapView)
 
