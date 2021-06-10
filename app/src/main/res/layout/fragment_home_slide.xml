@@ -6,9 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/background_slide_panel_round"
     android:clickable="true"
-    android:focusable="true"
-    android:paddingStart="24dp"
-    android:paddingEnd="24dp">
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/slide_panel_handle"
@@ -33,6 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_search"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:paddingStart="18dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
@@ -60,142 +60,159 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/recommend_store_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.core.widget.NestedScrollView
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/noto_sans_kr_bold"
-        android:text="이런 가게는 어때요?"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_layout" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recommend_store_recyclerview"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout"
+        android:id="@+id/scroll_view"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/recommend_store_textview" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/popular_tag_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/noto_sans_kr_medium"
-        android:text="인기 태그"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recommend_store_recyclerview" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/niche_ad_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gray_box"
-        android:padding="18dp"
-        app:layout_constraintTop_toBottomOf="@id/popular_tag_textview">
-
-        <ImageView
-            android:id="@+id/ad_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_advertisement"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/ad_title_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:text="근처 골목가게를 알려주세요!"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/ad_content_textview"
-            app:layout_constraintEnd_toStartOf="@id/ad_arrow_button"
-            app:layout_constraintStart_toEndOf="@id/ad_icon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="1" />
-
-        <TextView
-            android:id="@+id/ad_content_textview"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            android:fontFamily="@font/noto_sans_kr_medium"
-            android:text="알고있는 정보를 공유하고 코인을 받을 수 있어요."
-            android:textColor="@color/color_gray"
-            android:textSize="14sp"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/ad_arrow_button"
-            app:layout_constraintStart_toStartOf="@id/ad_title_textview"
-            app:layout_constraintTop_toBottomOf="@id/ad_title_textview"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintHorizontal_bias="0"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/recommend_store_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="이런 가게는 어때요?"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommend_store_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/recommend_store_textview" />
+
+            <TextView
+                android:id="@+id/popular_tag_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:text="인기 태그"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recommend_store_recyclerview" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/niche_ad_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_box"
+                android:padding="18dp"
+                app:layout_constraintTop_toBottomOf="@id/popular_tag_textview">
+
+                <ImageView
+                    android:id="@+id/ad_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_advertisement"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/ad_arrow_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ad_title_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="근처 골목가게를 알려주세요!"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/ad_content_textview"
+                    app:layout_constraintEnd_toStartOf="@id/ad_arrow_button"
+                    app:layout_constraintStart_toEndOf="@id/ad_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintVertical_bias="1" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/ad_content_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="알고있는 정보를 공유하고 코인을 받을 수 있어요."
+                    android:textColor="@color/color_gray"
+                    android:textSize="14sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ad_arrow_button"
+                    app:layout_constraintStart_toStartOf="@id/ad_title_textview"
+                    app:layout_constraintTop_toBottomOf="@id/ad_title_textview"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintHorizontal_bias="0"/>
 
-    <TextView
-        android:id="@+id/near_popular_store_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/noto_sans_kr_bold"
-        android:text="내 근처 인기 가게"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/niche_ad_layout" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/near_popular_store_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/near_popular_store_textview" />
+                <ImageView
+                    android:id="@+id/ad_arrow_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/near_popular_topic_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/noto_sans_kr_bold"
-        android:text="내 근처 인기 토픽"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/near_popular_store_recyclerview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/near_popular_topic_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/near_popular_topic_textview" />
+            <TextView
+                android:id="@+id/near_popular_store_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="내 근처 인기 가게"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/niche_ad_layout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/near_popular_store_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/near_popular_store_textview" />
+
+            <TextView
+                android:id="@+id/near_popular_topic_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="내 근처 인기 토픽"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/near_popular_store_recyclerview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/near_popular_topic_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/near_popular_topic_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
