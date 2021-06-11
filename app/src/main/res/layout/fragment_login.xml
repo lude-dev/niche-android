@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.implude.niche.presentation.signin.SignInViewModel" />
+
+        <variable
+            name="vm"
+            type="SignInViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/color_hint"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:enabled="false"
+            android:hint="이메일"
+            android:text="@={vm.email}"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            android:textColorHint="@color/color_hint"
+            android:textSize="12sp"
+            android:autofillHints="emailAddress" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/color_hint"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:hint="비밀번호"
+            android:text="@={vm.password}"
+            android:inputType="textPassword"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            android:textColorHint="@color/color_hint"
+            android:textSize="12sp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="27dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/color_hint"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:hint="비밀번호 재입력"
+            android:text="@={vm.passwordVerify}"
+            android:inputType="textPassword"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            android:textColorHint="@color/color_hint"
+            android:textSize="12sp"
+            android:importantForAutofill="no" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_main_color"
+            android:textColor="@color/white"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:textSize="16sp"
+            android:text="다음" />
+
+    </LinearLayout>
+</layout>
