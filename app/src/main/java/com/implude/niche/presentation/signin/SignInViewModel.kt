@@ -8,7 +8,7 @@ class SignInViewModel : ViewModel() {
     var password: String = ""
     var passwordVerify: String = ""
 
-    fun onEmailEntered() {
-
+    fun checkEmailRegistered() {
+        // temporary solution
     }
 }
