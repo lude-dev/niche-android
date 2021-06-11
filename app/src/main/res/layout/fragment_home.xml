@@ -17,7 +17,7 @@
         app:umanoOverlay="true"
         app:umanoPanelHeight="125dp"
         app:umanoShadowHeight="0dp"
-        tools:context=".presentation.home.HomeFragment">
+        tools:context=".presentation.main.home.HomeFragment">
 
         <LinearLayout
             android:id="@+id/map_container"
