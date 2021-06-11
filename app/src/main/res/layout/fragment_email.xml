@@ -35,11 +35,12 @@
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_main_color"
             android:fontFamily="@font/noto_sans_kr_medium"
-            android:onClick="@{() -> vm.onEmailEntered()}"
+            android:onClick="@{() -> vm.checkEmailRegistered()}"
             android:text="다음"
             android:textColor="@color/white"
             android:textSize="16sp" />
