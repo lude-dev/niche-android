@@ -4,15 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentParticipationBinding
 import com.implude.niche.domain.models.*
 import com.implude.niche.presentation.base.BaseFragment
-import com.implude.niche.presentation.main.RowPlaceAdapter
-import com.implude.niche.presentation.main.home.PlaceAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layout.fragment_participation) {
@@ -26,7 +22,7 @@ class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layou
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val lackInfoPlaceAdapter = RowPlaceAdapter(this.requireContext())
+        val lackInfoPlaceAdapter = NeedFixPlaceAdapter(this.requireContext())
         val lackInfoPlaceLayoutManager = LinearLayoutManager(this.requireContext())
 
         binding.lackInformationRecyclerview.apply {
