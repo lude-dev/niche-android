@@ -1,0 +1,30 @@
+query NearFixReport($lat: Float!, $lon: Float!) {
+    nearFixReport(lat: $lat, lon: $lon) {
+        place {
+            _id
+            category {
+                _id
+                label
+            }
+            commentQuantity
+            heartQuantity
+            hearted
+            location {
+                lat
+                lon
+            }
+            name
+            owner {
+                _id
+                name
+                profileImage
+            }
+            tags {
+                _id
+                label
+            }
+            verified
+        }
+        value
+    }
+}

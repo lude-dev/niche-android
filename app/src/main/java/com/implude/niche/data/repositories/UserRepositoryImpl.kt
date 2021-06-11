@@ -5,7 +5,8 @@ import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.rx3.rxMutate
 import com.implude.niche.LoginMutation
 import com.implude.niche.RegisterUserMutation
-import com.implude.niche.data.mappers.Mapper
+import com.implude.niche.data.mappers.RegisteredInfoMapper
+import com.implude.niche.data.mappers.TokenInfoMapper
 import com.implude.niche.data.operationFailedException
 import com.implude.niche.data.safeSingleCall
 import com.implude.niche.domain.models.RegisteredInfoModel
@@ -15,8 +16,8 @@ import io.reactivex.rxjava3.core.Single
 
 class UserRepositoryImpl(
     private val apolloClient: ApolloClient,
-    private val tokenInfoMapper: Mapper<LoginMutation.Data, TokenInfoModel>,
-    private val registeredInfoMapper: Mapper<RegisterUserMutation.Data, RegisteredInfoModel>
+    private val tokenInfoMapper: TokenInfoMapper,
+    private val registeredInfoMapper: RegisteredInfoMapper,
 ) : UserRepository {
     override fun login(email: String, password: String): Single<TokenInfoModel> = safeSingleCall {
         apolloClient.rxMutate(LoginMutation(email, password))
