@@ -13,7 +13,7 @@
         android:paddingStart="24dp"
         android:paddingTop="45dp"
         android:paddingEnd="24dp"
-        tools:context=".presentation.participation.ParticipationFragment">
+        tools:context=".presentation.main.participation.ParticipationFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

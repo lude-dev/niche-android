@@ -1,4 +1,4 @@
-package com.implude.niche.presentation.home
+package com.implude.niche.presentation.main.home
 
 import android.content.Context
 import com.implude.niche.R

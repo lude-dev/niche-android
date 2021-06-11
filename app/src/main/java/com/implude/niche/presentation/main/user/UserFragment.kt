@@ -1,19 +1,17 @@
-package com.implude.niche.presentation.participation
+package com.implude.niche.presentation.main.user
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.implude.niche.R
-import com.implude.niche.databinding.FragmentParticipationBinding
+import com.implude.niche.databinding.FragmentUserBinding
 import com.implude.niche.presentation.base.BaseFragment
 
-class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layout.fragment_participation) {
+class UserFragment : BaseFragment<FragmentUserBinding>(R.layout.fragment_user) {
 
-    private lateinit var participationViewModel: ParticipationViewModel
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,8 +20,8 @@ class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layou
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        participationViewModel =
-            ViewModelProvider(this).get(ParticipationViewModel::class.java)
+        userViewModel =
+            ViewModelProvider(this).get(UserViewModel::class.java)
 
         return binding.root
     }
