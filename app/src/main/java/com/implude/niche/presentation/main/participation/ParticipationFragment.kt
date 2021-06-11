@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentParticipationBinding
 import com.implude.niche.presentation.base.BaseFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layout.fragment_participation) {
 
-    private lateinit var participationViewModel: ParticipationViewModel
+    private val participationViewModel: ParticipationViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,9 +19,6 @@ class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layou
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-
-        participationViewModel =
-            ViewModelProvider(this).get(ParticipationViewModel::class.java)
 
         return binding.root
     }

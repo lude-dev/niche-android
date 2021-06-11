@@ -5,16 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
 import com.implude.niche.presentation.base.BaseFragment
 import com.skt.Tmap.TMapView
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,7 +22,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         val recommendPlaceAdapter = PlaceAdapter(this.requireContext())
         val recommendPlaceLayoutManager = LinearLayoutManager(this.requireContext())
