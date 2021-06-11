@@ -16,6 +16,7 @@ class HomeViewModel(
 ) : ViewModel() {
 
     val locationFetchFailedEvent = SingleLiveEvent<Unit>()
+    val locationPermissionDeniedEvent = SingleLiveEvent<Unit>()
     val nearPlaceFetchFailedEvent = SingleLiveEvent<Unit>()
 
     private val _nearPlace = MutableLiveData<List<ReducedPlaceModel>>()
@@ -25,7 +26,8 @@ class HomeViewModel(
         localRepository.getCurrentLocation().doOnSuccess {
             localDataStore.location = it
         }.doOnError {
-            locationFetchFailedEvent.call()
+            if (it is SecurityException) locationPermissionDeniedEvent.call()
+            else locationFetchFailedEvent.call()
         }.subscribe()
     }
 
