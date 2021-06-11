@@ -6,7 +6,8 @@ import com.apollographql.apollo.rx3.rxMutate
 import com.apollographql.apollo.rx3.rxQuery
 import com.implude.niche.CreatePlaceMutation
 import com.implude.niche.NearPlacesQuery
-import com.implude.niche.data.mappers.Mapper
+import com.implude.niche.data.mappers.CreatedPlaceMapper
+import com.implude.niche.data.mappers.NearPlacesMapper
 import com.implude.niche.data.operationFailedException
 import com.implude.niche.data.safeSingleCall
 import com.implude.niche.domain.models.PlaceModel
@@ -17,8 +18,8 @@ import io.reactivex.rxjava3.core.Single
 
 class PlaceRepositoryImpl(
     private val apolloClient: ApolloClient,
-    private val createdPlaceMapper: Mapper<CreatePlaceMutation.Data, PlaceModel>,
-    private val nearPlacesMapper: Mapper<NearPlacesQuery.Data, List<ReducedPlaceModel>>,
+    private val createdPlaceMapper: CreatedPlaceMapper,
+    private val nearPlacesMapper: NearPlacesMapper,
 ) : PlaceRepository {
     override fun createPlace(
         name: String,
