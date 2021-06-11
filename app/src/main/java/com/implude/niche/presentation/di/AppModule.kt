@@ -9,7 +9,7 @@ import org.koin.dsl.module
 
 val appModule = module {
     viewModel { HomeViewModel(get(), get(), get()) }
-    viewModel { ParticipationViewModel() }
+    viewModel { ParticipationViewModel(get(), get()) }
     viewModel { UserViewModel() }
 
     single { LocalDataStore() }
