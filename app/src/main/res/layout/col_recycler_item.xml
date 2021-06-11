@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -10,10 +11,89 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/store_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dummy_store2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/store_require_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="등록된 사진이 적어요"
+            android:textColor="@color/color_turquoise"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/store_image"
+            app:layout_constraintTop_toTopOf="@id/store_image" />
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="@{place.name}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/store_image"
+            app:layout_constraintStart_toEndOf="@id/store_image"
+            app:layout_constraintTop_toTopOf="@id/store_image" />
+
+
+        <TextView
+            android:id="@+id/store_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="270m"
+            android:textColor="@color/color_turquoise"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_distance"
+            app:layout_constraintBottom_toBottomOf="@id/store_image"
+            app:layout_constraintStart_toEndOf="@id/store_image" />
+
+
+        <TextView
+            android:id="@+id/store_hearts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:gravity="center_vertical"
+            android:text="@{place.heartQuantity}"
+            android:textColor="@color/color_pink"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_heart"
+            app:layout_constraintBottom_toBottomOf="@id/store_image"
+            app:layout_constraintStart_toEndOf="@id/store_distance" />
+
+        <TextView
+            android:id="@+id/store_coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:gravity="center_vertical"
+            android:text="7 ~ 12"
+            android:textColor="@color/color_orange"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_coin"
+            app:layout_constraintBottom_toBottomOf="@id/store_image"
+            app:layout_constraintStart_toEndOf="@id/store_hearts" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
