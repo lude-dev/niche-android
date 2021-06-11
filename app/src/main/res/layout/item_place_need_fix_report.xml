@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="place"
+            type="com.implude.niche.domain.models.PlaceModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/store_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dummy_store2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/store_require_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="등록된 사진이 적어요"
+            android:textColor="@color/color_turquoise"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/store_name"
+            app:layout_constraintStart_toStartOf="@id/store_name"
+            app:layout_constraintTop_toTopOf="@id/store_image"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="@{place.name}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/store_image"
+            app:layout_constraintBottom_toBottomOf="@id/store_image"
+            app:layout_constraintStart_toEndOf="@id/store_image"
+            tools:text="가게 이름" />
+
+
+        <TextView
+            android:id="@+id/store_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="270m"
+            android:textColor="@color/color_turquoise"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_distance"
+            app:layout_constraintTop_toBottomOf="@id/store_name"
+            app:layout_constraintBottom_toBottomOf="@id/store_image"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintStart_toStartOf="@id/store_name" />
+
+
+        <TextView
+            android:id="@+id/store_hearts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:gravity="center_vertical"
+            android:text="@{place.heartQuantity}"
+            android:textColor="@color/color_pink"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_heart"
+            app:layout_constraintTop_toTopOf="@id/store_distance"
+            app:layout_constraintBottom_toBottomOf="@id/store_distance"
+            app:layout_constraintStart_toEndOf="@id/store_distance"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/store_coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:gravity="center_vertical"
+            android:text="7 ~ 12"
+            android:textColor="@color/color_orange"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_coin"
+            app:layout_constraintTop_toTopOf="@id/store_distance"
+            app:layout_constraintBottom_toBottomOf="@id/store_distance"
+            app:layout_constraintStart_toEndOf="@id/store_hearts" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
