@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="place"
-            type="com.implude.niche.domain.models.PlaceModel" />
+            name="reducedPlace"
+            type="com.implude.niche.domain.models.ReducedPlaceModel" />
 
     </data>
 
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_medium"
-            android:text="@{place.name}"
+            android:text="@{reducedPlace.name}"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"

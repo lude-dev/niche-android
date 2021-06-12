@@ -12,6 +12,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -76,14 +77,14 @@
             android:drawablePadding="3dp"
             android:fontFamily="@font/noto_sans_kr_medium"
             android:gravity="center_vertical"
-            android:text="@{place.heartQuantity}"
+            android:text='@{String.format("%d", place.heartQuantity)}'
             android:textColor="@color/color_pink"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/ic_heart"
             app:layout_constraintTop_toTopOf="@id/store_distance"
             app:layout_constraintBottom_toBottomOf="@id/store_distance"
             app:layout_constraintStart_toEndOf="@id/store_distance"
-            tools:text="10" />
+            tools:text="23"/>
 
         <TextView
             android:id="@+id/store_coins"

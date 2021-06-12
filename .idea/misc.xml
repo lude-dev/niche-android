@@ -20,10 +20,11 @@
         <entry key="app/src/main/res/drawable/ic_sliding_pannel_handle.xml" value="0.3912820512820513" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.3229166666666667" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3253333333333333" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_home_slide.xml" value="0.3253333333333333" />
         <entry key="app/src/main/res/layout/fragment_participation.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.26481481481481484" />
+        <entry key="app/src/main/res/layout/item_place_need_fix_report.xml" value="0.18828828828828828" />
         <entry key="app/src/main/res/layout/row_recycler_item.xml" value="0.3253333333333333" />
         <entry key="app/src/main/res/layout/store_recycler_item.xml" value="0.18693693693693694" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3229166666666667" />

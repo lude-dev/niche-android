@@ -23,15 +23,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val recommendPlaceAdapter = PlaceAdapter(this.requireContext())
+        val recommendPlaceAdapter = RowPlaceAdapter(this.requireContext())
         val recommendPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         recommendPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
-        val nearPopularPlaceAdapter = PlaceAdapter(this.requireContext())
+        val nearPopularPlaceAdapter = RowPlaceAdapter(this.requireContext())
         val nearPopularPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         nearPopularPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
-        val nearPopularTopicPlaceAdapter = PlaceAdapter(this.requireContext())
+        val nearPopularTopicPlaceAdapter = RowPlaceAdapter(this.requireContext())
         val nearPopularTopicPlaceLayoutManager = LinearLayoutManager(this.requireContext())
         nearPopularTopicPlaceLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
