@@ -75,7 +75,6 @@
             android:layout_height="wrap_content"
             android:drawablePadding="3dp"
             android:fontFamily="@font/noto_sans_kr_medium"
-            android:text=""
             android:textColor="@color/color_gray"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/ic_comment"
