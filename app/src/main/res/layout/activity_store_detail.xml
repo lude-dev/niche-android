@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.StoreDetailActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/go_back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_arrow_left"
+                app:layout_constraintBottom_toBottomOf="@id/store_category"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/store_category" />
+
+            <TextView
+                android:id="@+id/store_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:textColor="@color/aquamarine"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/go_back_arrow"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="카페" />
+
+            <TextView
+                android:id="@+id/store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/store_category"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="봉구스 밥버거" />
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/store_image_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/dummy_store"
+                app:layout_constraintTop_toBottomOf="@id/store_name" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/store_image_preview"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/introduce_store_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="가게 소개"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintBottom_toBottomOf="@id/introduce_store_textview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/introduce_store_textview" />
+
+                <TextView
+                    android:id="@+id/store_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/noto_sans_kr_regular"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/introduce_store_textview"
+                    app:layout_constraintTop_toBottomOf="@id/introduce_store_textview"
+                    tools:text="“봄날, 벚꽃, 그리고 너”는 식물원 컨셉의 카페로써\n실내데이트와 가족단위 여행객이 즐기기 좋다." />
+
+                <TextView
+                    android:id="@+id/store_hearts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center_vertical"
+                    android:text="370"
+                    android:textColor="@color/color_pink"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_heart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/store_description" />
+
+                <TextView
+                    android:id="@+id/store_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:textColor="@color/color_gray"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_add_comment"
+                    app:layout_constraintBottom_toBottomOf="@id/store_hearts"
+                    app:layout_constraintStart_toEndOf="@id/store_hearts"
+                    app:layout_constraintTop_toTopOf="@id/store_hearts"
+                    tools:text="23" />
+
+                <TextView
+                    android:id="@+id/store_picture_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="사진"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/store_hearts" />
+
+                <ImageView
+                    android:id="@+id/store_picture_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/dummy_picture"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/store_picture_textview" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/dummy_picture2"
+                    app:layout_constraintBottom_toBottomOf="@id/store_picture_imageview"
+                    app:layout_constraintStart_toEndOf="@id/store_picture_imageview"
+                    app:layout_constraintTop_toTopOf="@id/store_picture_imageview" />
+
+                <TextView
+                    android:id="@+id/store_menu_textview"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/store_picture_imageview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:text="메뉴"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/store_menu_recyclerview"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/store_menu_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/store_comments_textview"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/store_menu_recyclerview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:text="댓글"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/write_comment_layout"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/comment_gray_box"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/store_comments_textview"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:background="@null"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:fontFamily="@font/noto_sans_kr_medium"
+                        android:textSize="12sp"
+                        android:textColorHint="@color/color_gray"
+                        android:hint="댓글 달기 .."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:src="@drawable/ic_add_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/store_comment_recyclerview"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/write_comment_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
