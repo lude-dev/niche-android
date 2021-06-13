@@ -10,7 +10,7 @@ import com.implude.niche.domain.repositories.PlaceRepository
 import com.implude.niche.presentation.util.SingleLiveEvent
 
 class HomeViewModel(
-    private val localDataStore: LocalDataStore,
+    val localDataStore: LocalDataStore,
     private val localRepository: LocalRepository,
     private val placeRepository: PlaceRepository,
 ) : ViewModel() {
