@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Niche">
         <activity
+            android:name=".StoreDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
