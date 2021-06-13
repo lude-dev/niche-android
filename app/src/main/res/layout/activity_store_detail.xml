@@ -49,7 +49,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@id/store_category"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="봉구스 밥버거" />
@@ -70,7 +70,7 @@
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:text="가게 소개"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/store_image_preview" />
 
@@ -89,7 +89,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@id/introduce_store_textview"
                 app:layout_constraintTop_toBottomOf="@id/introduce_store_textview"
                 tools:text="“봄날, 벚꽃, 그리고 너”는 식물원 컨셉의 카페로써\n실내데이트와 가족단위 여행객이 즐기기 좋다." />
@@ -119,7 +119,7 @@
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:textColor="@color/color_gray"
                 android:textSize="16sp"
-                app:drawableStartCompat="@drawable/ic_comment"
+                app:drawableStartCompat="@drawable/ic_add_comment"
                 app:layout_constraintBottom_toBottomOf="@id/store_hearts"
                 app:layout_constraintStart_toEndOf="@id/store_hearts"
                 app:layout_constraintTop_toTopOf="@id/store_hearts"
@@ -133,7 +133,7 @@
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:text="사진"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/store_hearts" />
 
@@ -158,7 +158,7 @@
             <TextView
                 android:id="@+id/store_menu_textview"
                 android:fontFamily="@font/noto_sans_kr_medium"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/store_picture_imageview"
                 app:layout_constraintStart_toStartOf="parent"
@@ -177,7 +177,7 @@
             <TextView
                 android:id="@+id/store_comments_textview"
                 android:fontFamily="@font/noto_sans_kr_medium"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/store_menu_recyclerview"
                 app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +204,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    android:textSize="12dp"
+                    android:textSize="12sp"
                     android:textColorHint="@color/color_gray"
                     android:hint="댓글 달기 .."
                     android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/ic_comment"
+                    android:src="@drawable/ic_add_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
