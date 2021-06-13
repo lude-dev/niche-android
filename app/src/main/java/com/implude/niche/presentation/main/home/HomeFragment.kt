@@ -53,6 +53,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         }
 
+        with(homeViewModel) {
+            fetchLocation()
+            locationFetchSuccessEvent.observe(viewLifecycleOwner) {
+                recommendPlaceAdapter.location = localDataStore.location
+                fetchNearPlace()
+            }
+            nearPlace.observe(viewLifecycleOwner) {
+                recommendPlaceAdapter.items = it
+            }
+        }
+
         val tMapView = initializeTMapView()
         binding.mapContainer.addView(tMapView)
 
