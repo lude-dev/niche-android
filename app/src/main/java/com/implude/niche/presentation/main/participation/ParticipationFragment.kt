@@ -64,6 +64,102 @@ class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layou
                     owner = null,
                     verified = true,
                     hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
+                ),
+                PlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    comments = listOf(CommentModel("sdf", listOf("sdf", "sdf"),null, UserModel("sdf","sdf","sdf"))),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    owner = null,
+                    verified = true,
+                    hearted = false
                 )
             )
         }
