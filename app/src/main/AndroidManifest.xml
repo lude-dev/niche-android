@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Niche">
         <activity
-            android:name=".StoreDetailActivity"
+            android:name=".presentation.StoreDetailActivity"
             android:exported="true" />
         <activity
             android:name=".presentation.main.MainActivity"
