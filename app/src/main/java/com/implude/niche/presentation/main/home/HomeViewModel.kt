@@ -15,6 +15,7 @@ class HomeViewModel(
     private val placeRepository: PlaceRepository,
 ) : ViewModel() {
 
+    val locationFetchSuccessEvent = SingleLiveEvent<Unit>()
     val locationFetchFailedEvent = SingleLiveEvent<Unit>()
     val locationPermissionDeniedEvent = SingleLiveEvent<Unit>()
     val nearPlaceFetchFailedEvent = SingleLiveEvent<Unit>()
@@ -25,6 +26,7 @@ class HomeViewModel(
     fun fetchLocation() {
         localRepository.getCurrentLocation().doOnSuccess {
             localDataStore.location = it
+            locationFetchSuccessEvent.call()
         }.doOnError {
             if (it is SecurityException) locationPermissionDeniedEvent.call()
             else locationFetchFailedEvent.call()
@@ -38,5 +40,9 @@ class HomeViewModel(
         }.doOnError {
             nearPlaceFetchFailedEvent.call()
         }.subscribe()
+    }
+
+    companion object {
+        const val TAG = "HomeViewModel"
     }
 }
