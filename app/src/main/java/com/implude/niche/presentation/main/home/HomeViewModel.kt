@@ -10,11 +10,12 @@ import com.implude.niche.domain.repositories.PlaceRepository
 import com.implude.niche.presentation.util.SingleLiveEvent
 
 class HomeViewModel(
-    private val localDataStore: LocalDataStore,
+    val localDataStore: LocalDataStore,
     private val localRepository: LocalRepository,
     private val placeRepository: PlaceRepository,
 ) : ViewModel() {
 
+    val locationFetchSuccessEvent = SingleLiveEvent<Unit>()
     val locationFetchFailedEvent = SingleLiveEvent<Unit>()
     val locationPermissionDeniedEvent = SingleLiveEvent<Unit>()
     val nearPlaceFetchFailedEvent = SingleLiveEvent<Unit>()
@@ -25,6 +26,7 @@ class HomeViewModel(
     fun fetchLocation() {
         localRepository.getCurrentLocation().doOnSuccess {
             localDataStore.location = it
+            locationFetchSuccessEvent.call()
         }.doOnError {
             if (it is SecurityException) locationPermissionDeniedEvent.call()
             else locationFetchFailedEvent.call()
@@ -38,5 +40,9 @@ class HomeViewModel(
         }.doOnError {
             nearPlaceFetchFailedEvent.call()
         }.subscribe()
+    }
+
+    companion object {
+        const val TAG = "HomeViewModel"
     }
 }

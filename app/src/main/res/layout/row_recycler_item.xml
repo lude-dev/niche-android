@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="reducedPlace"
             type="com.implude.niche.domain.models.ReducedPlaceModel" />
+
+        <variable
+            name="userLocation"
+            type="com.implude.niche.domain.models.LocationModel" />
 
     </data>
 
@@ -23,7 +28,8 @@
             android:src="@drawable/dummy_store"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="가게 사진" />
 
 
         <TextView
@@ -44,12 +50,13 @@
             android:layout_height="wrap_content"
             android:drawablePadding="3dp"
             android:fontFamily="@font/noto_sans_kr_medium"
-            android:text="270m"
+            android:text='@{String.format("%.0fm", userLocation.distanceTo(reducedPlace.location))}'
             android:textColor="@color/color_turquoise"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/ic_distance"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/store_name" />
+            app:layout_constraintTop_toBottomOf="@id/store_name"
+            tools:text="100m" />
 
 
         <TextView
@@ -60,13 +67,14 @@
             android:drawablePadding="3dp"
             android:fontFamily="@font/noto_sans_kr_medium"
             android:gravity="center_vertical"
-            android:text="370"
+            android:text='@{String.format("%d", reducedPlace.heartQuantity)}'
             android:textColor="@color/color_pink"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/ic_heart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/store_name" />
+            app:layout_constraintTop_toBottomOf="@id/store_name"
+            tools:text="77" />
 
 
         <TextView
@@ -75,12 +83,13 @@
             android:layout_height="wrap_content"
             android:drawablePadding="3dp"
             android:fontFamily="@font/noto_sans_kr_medium"
-            android:text=""
+            android:text='@{String.format("%d", reducedPlace.commentQuantity)}'
             android:textColor="@color/color_gray"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/ic_comment"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/store_name" />
+            app:layout_constraintTop_toBottomOf="@id/store_name"
+            tools:text="35" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
