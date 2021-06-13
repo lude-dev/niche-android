@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/menu_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="새벽의 호자차 티" />
+
+        <TextView
+            android:id="@+id/menu_price_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:textColor="#5E5E5E"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/menu_title_textview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3000원" />
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/menu_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="맑음을 선사하는 새벽의 호지 차를 한껏 싸서 드셔보세요. 주인장이 매일 아침 제주에서 따오는 찻잎으로 직접 우려 만듭니다." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
