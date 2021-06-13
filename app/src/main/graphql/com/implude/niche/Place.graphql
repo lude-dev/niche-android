@@ -31,7 +31,6 @@ query NearPlaces($lat: Float!, $lon: Float!) {
         }
         commentQuantity
         heartQuantity
-        hearted
         location {
             lat
             lon
