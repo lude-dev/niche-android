@@ -9,8 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_hint">#7B7B7B</color>
     <color name="box_gray">#F5F5F5</color>
+    <color name="wallet_box_gray">#F8F8F8</color>
     <color name="color_turquoise">#297D89</color>
     <color name="color_gray">#626262</color>
+    <color name="light_gray">#B3B3B3</color>
     <color name="color_pink">#FF6060</color>
     <color name="color_orange">#F3A313</color>
+    <color name="aquamarine">#2CADC0</color>
 </resources>
