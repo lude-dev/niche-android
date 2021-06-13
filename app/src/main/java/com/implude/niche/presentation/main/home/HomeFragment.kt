@@ -9,6 +9,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
+import com.implude.niche.domain.models.CategoryModel
+import com.implude.niche.domain.models.LocationModel
+import com.implude.niche.domain.models.ReducedPlaceModel
+import com.implude.niche.domain.models.TagModel
 import com.implude.niche.presentation.base.BaseFragment
 import com.skt.Tmap.TMapMarkerItem
 import com.skt.Tmap.TMapPoint
@@ -47,18 +51,123 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.fragmentHomeSlide.recommendStoreRecyclerview.apply {
             this.layoutManager = recommendPlaceLayoutManager
             this.adapter = recommendPlaceAdapter
+            recommendPlaceAdapter.items = listOf(
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                ),
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                ),
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                )
+            )
 
         }
 
         binding.fragmentHomeSlide.nearPopularStoreRecyclerview.apply {
             this.layoutManager = nearPopularPlaceLayoutManager
             this.adapter = nearPopularPlaceAdapter
+            nearPopularPlaceAdapter.items = listOf(
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                ),
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                ),
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                )
+            )
 
         }
 
         binding.fragmentHomeSlide.nearPopularTopicRecyclerview.apply {
             this.layoutManager = nearPopularTopicPlaceLayoutManager
             this.adapter = nearPopularTopicPlaceAdapter
+            nearPopularTopicPlaceAdapter.items = listOf(
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                ),
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                ),
+                ReducedPlaceModel(
+                    name = "달달",
+                    id = "id",
+                    heartQuantity = 5,
+                    tags = listOf(TagModel("sdf","sdf",null)),
+                    location = LocationModel(1.1, 1.1),
+                    category = CategoryModel("id", "label"),
+                    verified = true,
+                    hearted = false,
+                    commentQuantity = 5
+                )
+            )
 
         }
 
