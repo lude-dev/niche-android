@@ -24,22 +24,24 @@ class HomeViewModel(
     val nearPlace: LiveData<List<ReducedPlaceModel>> = _nearPlace
 
     fun fetchLocation() {
-        localRepository.getCurrentLocation().doOnSuccess {
-            localDataStore.location = it
-            locationFetchSuccessEvent.call()
-        }.doOnError {
-            if (it is SecurityException) locationPermissionDeniedEvent.call()
-            else locationFetchFailedEvent.call()
-        }.subscribe()
+        localRepository.getCurrentLocation().subscribe(
+            {
+                localDataStore.location = it
+                locationFetchSuccessEvent.call()
+            },
+            {
+                if (it is SecurityException) locationPermissionDeniedEvent.call()
+                else locationFetchFailedEvent.call()
+            }
+        )
     }
 
     fun fetchNearPlace() {
         val (lat, lon) = localDataStore.location ?: return
-        placeRepository.nearPlace(lat, lon).doOnSuccess {
-            _nearPlace.value = it
-        }.doOnError {
-            nearPlaceFetchFailedEvent.call()
-        }.subscribe()
+        placeRepository.nearPlace(lat, lon).subscribe(
+            { _nearPlace.value = it },
+            { nearPlaceFetchFailedEvent.call() }
+        )
     }
 
     companion object {

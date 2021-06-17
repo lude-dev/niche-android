@@ -100,6 +100,17 @@
                     app:layout_constraintTop_toBottomOf="@id/introduce_store_textview"
                     tools:text="“봄날, 벚꽃, 그리고 너”는 식물원 컨셉의 카페로써\n실내데이트와 가족단위 여행객이 즐기기 좋다." />
 
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/store_tags_wrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:flexWrap="wrap"
+                    app:dividerDrawable="@drawable/tag_divider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/store_description"
+                    app:showDivider="middle" />
+
                 <TextView
                     android:id="@+id/store_hearts"
                     android:layout_width="wrap_content"
@@ -114,7 +125,7 @@
                     android:textSize="16sp"
                     app:drawableStartCompat="@drawable/ic_heart"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/store_description" />
+                    app:layout_constraintTop_toBottomOf="@+id/store_tags_wrapper" />
 
                 <TextView
                     android:id="@+id/store_comments"
