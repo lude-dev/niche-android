@@ -1,7 +1,6 @@
 package com.implude.niche.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -22,13 +21,12 @@ class StoreDetailActivity : AppCompatActivity() {
         } ?: storeDetailViewModel.fetchPlaceById("60c45bf4aa6e01000fbe35fe")
 
         storeDetailViewModel.place.observe(this) {
-            Log.i("StoreDetailActivity", "A")
-            Log.i("StoreDetailActivity", it.toString())
+
+            binding.data = it
             it.place?.tags?.filterNotNull()?.forEach { tag ->
-                Log.i("StoreDetailActivity", tag.label)
                 binding.storeTagsWrapper.addView(
                     TextView(binding.root.context).apply {
-                        text = "#${tag.label}"
+                        text = getString(R.string.tag_placeholder).format(tag.label)
                         background = ContextCompat.getDrawable(
                             binding.root.context,
                             R.drawable.tag_border
@@ -45,5 +43,6 @@ class StoreDetailActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_PLACE_ID = "com.implude.niche.presentation.EXTRA_PLACE_ID"
+        const val TAG = "StoreDetailActivity"
     }
 }
