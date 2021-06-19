@@ -31,7 +31,6 @@ query NearPlaces($lat: Float!, $lon: Float!) {
         }
         commentQuantity
         heartQuantity
-        hearted
         location {
             lat
             lon
@@ -40,6 +39,33 @@ query NearPlaces($lat: Float!, $lon: Float!) {
         tags {
             _id
             label
+        }
+        verified
+    }
+}
+
+query PlaceById($placeId: ID!) {
+    place(placeId: $placeId) {
+        _id
+        category {
+            _id
+            label
+        }
+        comment {
+            content
+            user {
+                name
+            }
+        }
+        hearted
+        tags {
+            label
+        }
+        name
+        heartQuantity
+        location {
+            lat
+            lon
         }
         verified
     }

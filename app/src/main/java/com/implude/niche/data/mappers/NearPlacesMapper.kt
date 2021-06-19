@@ -15,7 +15,7 @@ class NearPlacesMapper : Mapper<NearPlacesQuery.Data, List<ReducedPlaceModel>> {
             category = CategoryModel(it.category._id, it.category.label ?: ""),
             tags = it.tags.filterNotNull().map { tag -> TagModel(tag._id, tag.label, null) },
             verified = it.verified,
-            hearted = it.hearted,
+            hearted = false, // hearted property is hardcoded to false; internal server error.
             commentQuantity = it.commentQuantity,
             heartQuantity = it.heartQuantity,
         )

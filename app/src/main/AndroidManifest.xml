@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".presentation.NicheApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +18,10 @@
             android:name=".presentation.signin.SignInActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.StoreDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

@@ -13,7 +13,7 @@
         android:paddingStart="24dp"
         android:paddingTop="45dp"
         android:paddingEnd="24dp"
-        tools:context=".presentation.participation.ParticipationFragment">
+        tools:context=".presentation.main.participation.ParticipationFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,6 +30,70 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/niche_ad_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_box"
+                android:padding="18dp"
+                app:layout_constraintTop_toBottomOf="@id/participation_textview">
+
+                <ImageView
+                    android:id="@+id/ad_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_advertisement"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/ad_title_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="근처 골목가게를 알려주세요!"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/ad_content_textview"
+                    app:layout_constraintEnd_toStartOf="@id/ad_arrow_button"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toEndOf="@id/ad_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1" />
+
+                <TextView
+                    android:id="@+id/ad_content_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="18dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="알고있는 정보를 공유하고 코인을 받을 수 있어요."
+                    android:textColor="@color/color_gray"
+                    android:textSize="14sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ad_arrow_button"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/ad_title_textview"
+                    app:layout_constraintTop_toBottomOf="@id/ad_title_textview"
+                    app:layout_constraintVertical_bias="0" />
+
+
+                <ImageView
+                    android:id="@+id/ad_arrow_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <TextView
                 android:id="@+id/lack_information_textview"
                 android:layout_width="wrap_content"
@@ -40,55 +104,17 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/participation_textview" />
+                app:layout_constraintTop_toBottomOf="@id/niche_ad_layout" />
 
-            <TextView
-                android:id="@+id/lack_information_more_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/noto_sans_kr_medium"
-                android:text="더보기"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/lack_information_textview"
-                app:layout_constraintEnd_toEndOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/lack_information_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
                 app:layout_constraintTop_toBottomOf="@id/lack_information_textview" />
-
-            <TextView
-                android:id="@+id/require_verification_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="검증이 필요한 가게"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lack_information_recyclerview" />
-
-            <TextView
-                android:id="@+id/require_verification_more_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/noto_sans_kr_medium"
-                android:text="더보기"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/require_verification_textview"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/require_verification_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/require_verification_textview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.implude.niche.presentation.home.HomeFragment"
+        android:name="com.implude.niche.presentation.main.home.HomeFragment"
         android:label="menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_user"
-        android:name="com.implude.niche.presentation.user.UserFragment"
+        android:name="com.implude.niche.presentation.main.user.UserFragment"
         android:label="menu_user"
         tools:layout="@layout/fragment_user" />
 
     <fragment
         android:id="@+id/navigation_participation"
-        android:name="com.implude.niche.presentation.participation.ParticipationFragment"
+        android:name="com.implude.niche.presentation.main.participation.ParticipationFragment"
         android:label="menu_participation"
         tools:layout="@layout/fragment_participation" />
 </navigation>

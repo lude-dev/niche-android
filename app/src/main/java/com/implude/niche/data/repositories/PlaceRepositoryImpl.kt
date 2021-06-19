@@ -6,6 +6,7 @@ import com.apollographql.apollo.rx3.rxMutate
 import com.apollographql.apollo.rx3.rxQuery
 import com.implude.niche.CreatePlaceMutation
 import com.implude.niche.NearPlacesQuery
+import com.implude.niche.PlaceByIdQuery
 import com.implude.niche.data.mappers.CreatedPlaceMapper
 import com.implude.niche.data.mappers.NearPlacesMapper
 import com.implude.niche.data.operationFailedException
@@ -47,5 +48,11 @@ class PlaceRepositoryImpl(
             .data
             ?.let(nearPlacesMapper::map)
             ?: throw operationFailedException
+    }
+
+    override fun placeById(id: String): Single<PlaceByIdQuery.Data> = safeSingleCall {
+        apolloClient.rxQuery(PlaceByIdQuery(id))
+            .blockingFirst()
+            .data ?: throw operationFailedException
     }
 }
