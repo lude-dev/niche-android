@@ -1,9 +1,455 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.CertificateActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="data"
+            type="com.implude.niche.PlaceByIdQuery.Data" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.CertificateActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:elevation="10dp"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/body_layout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/go_back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left"
+                app:layout_constraintBottom_toBottomOf="@id/store_category"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/store_category" />
+
+            <TextView
+                android:id="@+id/store_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:text="@{data.place.category.label}"
+                android:textColor="@color/aquamarine"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/go_back_arrow"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="카페" />
+
+            <TextView
+                android:id="@+id/store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="@{data.place.name}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/store_category"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="봉구스 밥버거" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/body_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/header_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="80dp">
+
+                <TextView
+                    android:id="@+id/title_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="사업자 등록증에 있는 정보를 그대로 입력해주세요!"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cert_number_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="사업자 등록번호"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_textview" />
+
+                <EditText
+                    android:id="@+id/cert_number_edtitext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="사업자등록번호"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cert_number_textview" />
+
+                <TextView
+                    android:id="@+id/tax_type_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="과세구분"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cert_number_edtitext" />
+
+                <EditText
+                    android:id="@+id/tax_type_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="일반 / 간이 / 법인 / 부가가치세 면세 / 면세법인"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tax_type_textview" />
+
+                <TextView
+                    android:id="@+id/business_condition_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="업태"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tax_type_edittext" />
+
+                <EditText
+                    android:id="@+id/buisiness_condition_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="한글로 입력해주세요."
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/business_condition_textview" />
+
+                <TextView
+                    android:id="@+id/item_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="종목"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/buisiness_condition_edittext" />
+
+                <EditText
+                    android:id="@+id/item_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="한글로 입력해주세요."
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_textview" />
+
+                <TextView
+                    android:id="@+id/name_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="상호"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_edittext" />
+
+                <EditText
+                    android:id="@+id/name_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="사엄자등록증과 일치해야해요!"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_textview" />
+
+                <TextView
+                    android:id="@+id/ceo_type_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="대표자 구분"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_edittext" />
+
+                <EditText
+                    android:id="@+id/ceo_type_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="개인대표 / 공동대표"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ceo_type_textview" />
+
+                <TextView
+                    android:id="@+id/ceo_name_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="대표자 성명"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ceo_type_edittext" />
+
+                <EditText
+                    android:id="@+id/ceo_name_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="사엄자등록증과 일치해야해요!"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ceo_name_textview" />
+
+                <TextView
+                    android:id="@+id/ceo_birth_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="대표자 생년월일"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ceo_name_edittext" />
+
+                <EditText
+                    android:id="@+id/ceo_birth_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="생년월일 6자리를 입력해주세요."
+                    android:inputType="number"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ceo_birth_textview" />
+
+                <TextView
+                    android:id="@+id/address_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="사업장 소재지"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ceo_birth_edittext" />
+
+                <EditText
+                    android:id="@+id/address_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="사엄자등록증과 일치해야해요!"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_textview" />
+
+                <TextView
+                    android:id="@+id/cert_image_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:text="사업자등록증 첨부"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_edittext" />
+
+                <EditText
+                    android:id="@+id/cert_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/for_elevation_box"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:hint="사진 URL을 입력해주세요!"
+                    android:paddingStart="18dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cert_image_textview" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintTop_toBottomOf="@id/cert_image"
+                    android:layout_marginStart="24dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/aquamarine"
+                    android:fontFamily="@font/noto_sans_kr_bold"
+                    android:layout_marginEnd="24dp"
+                    android:text="완료"
+                    android:background="@drawable/button_disable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
