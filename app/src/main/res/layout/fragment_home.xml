@@ -15,7 +15,7 @@
         app:umanoDragView="@id/slide_panel_handle"
         app:umanoFadeColor="#00000000"
         app:umanoOverlay="true"
-        app:umanoPanelHeight="125dp"
+        app:umanoPanelHeight="160dp"
         app:umanoShadowHeight="0dp"
         tools:context=".presentation.main.home.HomeFragment">
 
