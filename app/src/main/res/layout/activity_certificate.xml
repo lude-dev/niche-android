@@ -107,7 +107,7 @@
 
                 <EditText
                     android:inputType="numberSigned"
-                    android:id="@+id/cert_number_edtitext"
+                    android:id="@+id/cert_number_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -138,7 +138,7 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cert_number_edtitext" />
+                    app:layout_constraintTop_toBottomOf="@id/cert_number_edittext" />
 
                 <EditText
                     android:id="@+id/tax_type_edittext"
@@ -175,7 +175,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tax_type_edittext" />
 
                 <EditText
-                    android:id="@+id/buisiness_condition_edittext"
+                    android:id="@+id/business_condition_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -206,7 +206,7 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/buisiness_condition_edittext" />
+                    app:layout_constraintTop_toBottomOf="@id/business_condition_edittext" />
 
                 <EditText
                     android:id="@+id/item_edittext"
