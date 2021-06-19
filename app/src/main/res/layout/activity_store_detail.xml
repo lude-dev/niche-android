@@ -10,14 +10,17 @@
             type="com.implude.niche.PlaceByIdQuery.Data" />
     </data>
 
-    <androidx.core.widget.NestedScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.StoreDetailActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/header_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/go_back_arrow"
@@ -57,14 +60,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="봉구스 밥버거" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/body_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
             <ImageView
                 android:id="@+id/store_image_preview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/dummy_store"
-                app:layout_constraintTop_toBottomOf="@id/store_name" />
+                android:src="@drawable/dummy_store"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -110,8 +119,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:flexWrap="wrap"
                     app:dividerDrawable="@drawable/tag_divider"
+                    app:flexWrap="wrap"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/store_description"
                     app:showDivider="middle" />
@@ -151,12 +160,12 @@
                     tools:text="23" />
 
                 <Button
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    android:textSize="14sp"
-                    android:text="정보 추가하기"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/aquamarine"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="정보 추가하기"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="@id/store_comments"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/store_comments" />
@@ -266,8 +275,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
 
-    </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>
