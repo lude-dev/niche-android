@@ -18,7 +18,7 @@ class NearFixReportsMapper : Mapper<NearFixReportQuery.Data, List<NeedFixReportM
                     category = CategoryModel(place.category._id, place.category.label ?: ""),
                     comments = listOf(),
                     heartQuantity = place.heartQuantity,
-                    hearted = place.hearted,
+                    hearted = place.hearted ?: false,
                     location = LocationModel(place.location.lat ?: Double.NaN, place.location.lon ?: Double.NaN),
                     name = place.name,
                     owner = place.owner?.let { owner -> UserModel(owner._id, owner.name, owner.profileImage) },
