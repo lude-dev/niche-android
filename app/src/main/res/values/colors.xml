@@ -15,6 +15,7 @@
     <color name="light_gray">#B3B3B3</color>
     <color name="very_light_gray">#F6F6F6</color>
     <color name="color_pink">#FF6060</color>
+    <color name="color_main">#2CADC0</color>
     <color name="color_orange">#F3A313</color>
     <color name="aquamarine">#2CADC0</color>
 </resources>
