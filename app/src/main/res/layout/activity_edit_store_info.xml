@@ -101,9 +101,10 @@
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
+                <EditText
+                    android:background="@null"
                     android:id="@+id/edit_store_name_edittext"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/noto_sans_kr_regular"
@@ -148,6 +149,7 @@
                     app:layout_constraintTop_toBottomOf="@id/store_image_preview" />
 
                 <TextView
+                    android:background="@null"
                     android:id="@+id/store_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
