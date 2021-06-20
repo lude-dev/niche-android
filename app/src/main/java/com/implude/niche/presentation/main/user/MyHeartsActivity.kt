@@ -3,23 +3,20 @@ package com.implude.niche.presentation.main.user
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.implude.niche.R
-import com.implude.niche.databinding.ActivityCertificateBinding
-import com.implude.niche.databinding.ActivityCommentsMoreBinding
+import com.implude.niche.databinding.ActivityMyHeartsBinding
 
-class CommentsMoreActivity : AppCompatActivity() {
+class MyHeartsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCommentsMoreBinding
+    private lateinit var binding: ActivityMyHeartsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_comments_more)
-        binding = ActivityCommentsMoreBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_my_hearts)
+        binding = ActivityMyHeartsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.goBackArrow.setOnClickListener {
             finish()
         }
-
-
     }
 }

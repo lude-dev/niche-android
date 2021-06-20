@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.user.HeartsMoreActivity">
+        tools:context=".presentation.main.user.MyCommentsActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/header_layout"
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="내가 누른 하트"
+                android:text="내가 쓴 댓글"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/go_back_arrow"
