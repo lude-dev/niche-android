@@ -1,5 +1,6 @@
 package com.implude.niche.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,10 @@ class StoreDetailActivity : AppCompatActivity() {
                     }
                 )
             }
+        }
+
+        binding.goToEditInfoBtn.setOnClickListener {
+            startActivity(Intent(this, EditStoreInfoActivity::class.java))
         }
 
         setContentView(binding.root)
