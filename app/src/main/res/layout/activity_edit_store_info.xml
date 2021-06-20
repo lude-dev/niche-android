@@ -202,21 +202,10 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/noto_sans_kr_medium"
                     android:text="태그"
-                    android:textColor="@color/black"
+                    android:textColor="@color/light_gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/store_description" />
-
-                <com.google.android.flexbox.FlexboxLayout
-                    android:id="@+id/store_tags_wrapper"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:dividerDrawable="@drawable/tag_divider"
-                    app:flexWrap="wrap"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/store_tags_textview"
-                    app:showDivider="middle" />
 
                 <TextView
                     android:id="@+id/store_picture_textview"
@@ -225,28 +214,10 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/noto_sans_kr_medium"
                     android:text="사진"
-                    android:textColor="@color/black"
+                    android:textColor="@color/light_gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/store_tags_wrapper" />
-
-                <ImageView
-                    android:id="@+id/store_picture_imageview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:src="@drawable/dummy_picture"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/store_picture_textview" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/dummy_picture2"
-                    app:layout_constraintBottom_toBottomOf="@id/store_picture_imageview"
-                    app:layout_constraintStart_toEndOf="@id/store_picture_imageview"
-                    app:layout_constraintTop_toTopOf="@id/store_picture_imageview" />
+                    app:layout_constraintTop_toBottomOf="@id/store_tags_textview" />
 
                 <TextView
                     android:id="@+id/store_menu_textview"
@@ -255,10 +226,10 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/noto_sans_kr_medium"
                     android:text="메뉴"
-                    android:textColor="@color/black"
+                    android:textColor="@color/light_gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/store_picture_imageview" />
+                    app:layout_constraintTop_toBottomOf="@id/store_picture_textview" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/store_menu_recyclerview"
