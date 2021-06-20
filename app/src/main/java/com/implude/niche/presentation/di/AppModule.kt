@@ -5,6 +5,7 @@ import android.location.LocationManager
 import com.implude.niche.data.LocalDataStore
 import com.implude.niche.data.repositories.LocalRepositoryImpl
 import com.implude.niche.domain.repositories.LocalRepository
+import com.implude.niche.presentation.StoreAddViewModel
 import com.implude.niche.presentation.StoreDetailViewModel
 import com.implude.niche.presentation.main.home.HomeViewModel
 import com.implude.niche.presentation.main.participation.ParticipationViewModel
@@ -18,6 +19,7 @@ val appModule = module {
     viewModel { ParticipationViewModel(get(), get()) }
     viewModel { UserViewModel() }
     viewModel { StoreDetailViewModel(get()) }
+    viewModel { StoreAddViewModel(get(), get()) }
 
     single { LocalDataStore() }
 

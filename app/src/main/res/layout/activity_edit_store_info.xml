@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="data"
-            type="com.implude.niche.PlaceByIdQuery.Data" />
+            name="vm"
+            type="com.implude.niche.presentation.StoreAddViewModel" />
     </data>
 
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:fontFamily="@font/noto_sans_kr_medium"
-                android:text="@{data.place.category.label}"
+                android:text="@{vm.category}"
                 android:textColor="@color/aquamarine"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/go_back_arrow"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="@{data.place.name}"
+                android:text="@{vm.name}"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@id/store_category"
@@ -72,6 +72,7 @@
                 android:text="저장"
                 android:textColor="@color/aquamarine"
                 android:textSize="13sp"
+                android:onClick="@{() -> vm.addStore()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -110,6 +111,7 @@
                     android:background="@null"
                     android:fontFamily="@font/noto_sans_kr_regular"
                     android:hint="가게 이름을 입력해주세요!"
+                    android:text="@={vm.name}"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -136,6 +138,7 @@
                     android:background="@null"
                     android:fontFamily="@font/noto_sans_kr_regular"
                     android:hint="가게 카테고리를 입력해주세요!"
+                    android:text="@={vm.category}"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
