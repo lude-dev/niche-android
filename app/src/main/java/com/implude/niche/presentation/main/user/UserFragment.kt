@@ -1,5 +1,6 @@
 package com.implude.niche.presentation.main.user
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,14 @@ class UserFragment : BaseFragment<FragmentUserBinding>(R.layout.fragment_user) {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
+
+        binding.heartMoreTextview.setOnClickListener {
+            startActivity(Intent(context, MyHeartsActivity::class.java))
+        }
+
+        binding.recentCommentMoreTextview.setOnClickListener {
+            startActivity(Intent(context, MyCommentsActivity::class.java))
+        }
 
         return binding.root
     }
