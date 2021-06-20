@@ -102,6 +102,7 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <EditText
+                    android:hint="가게 이름을 입력해주세요!"
                     android:background="@null"
                     android:id="@+id/edit_store_name_edittext"
                     android:layout_width="match_parent"
@@ -126,14 +127,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/edit_store_name_edittext" />
 
-                <ImageView
-                    android:id="@+id/store_image_preview"
+                <EditText
+                    android:hint="사진 URL을 입력해주세요!"
+                    android:background="@null"
+                    android:id="@+id/image_preview_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/dummy_store"
-                    app:layout_constraintTop_toBottomOf="@id/image_preview_textview" />
+                    android:fontFamily="@font/noto_sans_kr_regular"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_preview_textview"
+                    tools:text="" />
 
 
                 <TextView
@@ -146,12 +152,13 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/store_image_preview" />
+                    app:layout_constraintTop_toBottomOf="@id/image_preview_edittext" />
 
-                <TextView
+                <EditText
+                    android:hint="가게 소개글을 입력해주세요!"
                     android:background="@null"
                     android:id="@+id/store_description"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/noto_sans_kr_regular"
