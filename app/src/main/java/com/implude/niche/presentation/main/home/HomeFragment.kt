@@ -54,13 +54,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         binding.fragmentHomeSlide.nearPopularStoreRecyclerview.apply {
             this.layoutManager = nearPopularPlaceLayoutManager
-            this.adapter = nearPopularPlaceAdapter
+            this.adapter = recommendPlaceAdapter
 
         }
 
         binding.fragmentHomeSlide.nearPopularTopicRecyclerview.apply {
             this.layoutManager = nearPopularTopicPlaceLayoutManager
-            this.adapter = nearPopularTopicPlaceAdapter
+            this.adapter = recommendPlaceAdapter
 
         }
 
