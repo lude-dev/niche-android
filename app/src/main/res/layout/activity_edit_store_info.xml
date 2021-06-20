@@ -12,12 +12,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        tools:context=".presentation.EditStoreInfoActivity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".presentation.EditStoreInfoActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            app:layout_constraintBottom_toTopOf="@id/body_layout"
             android:id="@+id/header_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +26,7 @@
             android:paddingTop="16dp"
             android:paddingEnd="24dp"
             android:paddingBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/body_layout"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -65,23 +65,23 @@
                 tools:text="봉구스 밥버거" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:text="저장"
+                android:textColor="@color/aquamarine"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textColor="@color/aquamarine"
-                android:fontFamily="@font/noto_sans_kr_medium"
-                android:textSize="13sp"
-                android:text="저장"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/body_layout"
-            app:layout_constraintTop_toBottomOf="@id/header_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/header_layout">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -90,7 +90,6 @@
                 android:paddingEnd="24dp">
 
                 <TextView
-                    app:layout_constraintTop_toTopOf="parent"
                     android:id="@+id/edit_store_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -99,15 +98,17 @@
                     android:text="가게 이름"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:background="@null"
                     android:id="@+id/edit_store_name_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@null"
                     android:fontFamily="@font/noto_sans_kr_regular"
+                    android:hint="가게 이름을 입력해주세요!"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -115,25 +116,56 @@
                     tools:text="봉구수 밥버거" />
 
                 <TextView
-                    android:id="@+id/image_preview_textview"
+                    android:id="@+id/store_category_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    android:text="가게 대표 사진"
+                    android:text="가게 종류"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/edit_store_name_edittext" />
 
-                <ImageView
-                    android:id="@+id/store_image_preview"
+                <EditText
+                    android:id="@+id/store_category_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/dummy_store"
-                    app:layout_constraintTop_toBottomOf="@id/image_preview_textview" />
+                    android:background="@null"
+                    android:fontFamily="@font/noto_sans_kr_regular"
+                    android:hint="가게 카테고리를 입력해주세요!"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/store_category_textview"
+                    tools:text="카페" />
+
+                <TextView
+                    android:id="@+id/image_preview_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="가게 대표 사진"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/store_category_edittext" />
+
+                <EditText
+                    android:id="@+id/image_preview_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:fontFamily="@font/noto_sans_kr_regular"
+                    android:hint="사진 URL을 입력해주세요!"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_preview_textview"
+                    tools:text="" />
 
 
                 <TextView
@@ -146,15 +178,16 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/store_image_preview" />
+                    app:layout_constraintTop_toBottomOf="@id/image_preview_edittext" />
 
-                <TextView
-                    android:background="@null"
+                <EditText
                     android:id="@+id/store_description"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@null"
                     android:fontFamily="@font/noto_sans_kr_regular"
+                    android:hint="가게 소개글을 입력해주세요!"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@id/introduce_store_textview"

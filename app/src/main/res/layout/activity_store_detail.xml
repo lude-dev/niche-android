@@ -165,11 +165,12 @@
                         tools:text="23" />
 
                     <Button
+                        android:id="@+id/go_to_edit_info_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/aquamarine"
                         android:fontFamily="@font/noto_sans_kr_medium"
-                        android:text="정보 추가하기"
+                        android:text="정보 수정하기"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="@id/store_comments"
                         app:layout_constraintEnd_toEndOf="parent"
