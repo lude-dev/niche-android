@@ -43,6 +43,10 @@ class StoreDetailActivity : AppCompatActivity() {
             startActivity(Intent(this, EditStoreInfoActivity::class.java))
         }
 
+        binding.goBackArrow.setOnClickListener {
+            finish()
+        }
+
         setContentView(binding.root)
     }
 

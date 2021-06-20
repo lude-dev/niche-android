@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="@{user.name}"
+                android:text="테스트계쩡"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="@id/round_user_imageview"
@@ -76,7 +76,7 @@
                     android:textSize="28sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/wallet_text"
-                    tools:text="120 코인" />
+                    android:text="120 코인" />
 
                 <ImageView
                     android:layout_width="wrap_content"
