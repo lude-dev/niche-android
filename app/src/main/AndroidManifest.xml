@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Niche">
         <activity
+            android:name=".presentation.main.user.CommentsMoreActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.main.user.HeartsMoreActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.CertificateActivity"
             android:exported="true" />
         <activity
