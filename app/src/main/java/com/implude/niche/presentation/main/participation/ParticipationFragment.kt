@@ -1,5 +1,6 @@
 package com.implude.niche.presentation.main.participation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentParticipationBinding
 import com.implude.niche.domain.models.*
+import com.implude.niche.presentation.EditStoreInfoActivity
 import com.implude.niche.presentation.base.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -66,6 +68,10 @@ class ParticipationFragment : BaseFragment<FragmentParticipationBinding>(R.layou
                     hearted = false
                 )
             )
+        }
+
+        binding.nicheAdLayout.setOnClickListener {
+            startActivity(Intent(context, EditStoreInfoActivity::class.java))
         }
 
         return binding.root

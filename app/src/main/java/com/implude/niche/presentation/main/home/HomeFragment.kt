@@ -1,5 +1,6 @@
 package com.implude.niche.presentation.main.home
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.implude.niche.R
 import com.implude.niche.databinding.FragmentHomeBinding
+import com.implude.niche.presentation.EditStoreInfoActivity
 import com.implude.niche.presentation.base.BaseFragment
 import com.skt.Tmap.TMapMarkerItem
 import com.skt.Tmap.TMapPoint
@@ -87,6 +89,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                     tMapView.addMarkerItem(place.id, marker)
                 }
             }
+        }
+
+        binding.fragmentHomeSlide.nicheAdLayout.setOnClickListener {
+            startActivity(Intent(context, EditStoreInfoActivity::class.java))
         }
 
         return binding.root
